@@ -1,0 +1,201 @@
+You are building a daily UI project. Below is the theme specification for today.
+
+## Theme Context (daily-context.json)
+```json
+{
+  "day": 36,
+  "date": "2026-05-31",
+  "version": "1.36.0",
+  "project_name": "x-template-036",
+  "theme": {
+    "name": "Synthwave",
+    "style": "synthwave",
+    "mood": "electric, retro, neon, 80s"
+  },
+  "palette": {
+    "background": "#0a0015",
+    "surface": "#120025",
+    "primary": "#f72585",
+    "accent": "#7209b7",
+    "text": "#e0aaff",
+    "muted": "#3a0068"
+  },
+  "typography": {
+    "heading": "Orbitron",
+    "body": "Rajdhani",
+    "size": "large"
+  },
+  "layout": {
+    "structure": "centered",
+    "density": "normal",
+    "border_style": "neon pink glow"
+  },
+  "animation": {
+    "level": "high",
+    "style": "grid scroll, neon pulse, scanlines"
+  },
+  "components": {
+    "hero_text": "DRIVE",
+    "subtitle": "Outrun the future.",
+    "button_label": "IGNITE_",
+    "badge_text": "SYNTHWAVE — ONLINE"
+  },
+  "commit_message": "feat: UI Day 36 — Synthwave [fallback]",
+  "source": "fallback",
+  "selected_component": {
+    "category": "Cards",
+    "component": "ElSombrero2_fresh-wombat-97.html",
+    "path": "C:\\Users\\User\\Documents\\GitHub\\Axon\\x-components\\Cards\\ElSombrero2_fresh-wombat-97.html",
+    "content": "<div id=\"card\" class=\"card\">\n  <div class=\"content\">\n    <span>HOVER ME</span>\n  </div>\n</div>\n<style>\n/* Tags: card */\n.card {\n  width: 190px;\n  height: 254px;\n  background: #171717;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  box-shadow: 0px 0px 3px 1px #00000088;\n  cursor: pointer;\n}\n\n.card .content {\n  border-radius: 5px;\n  background: #171717;\n  width: 186px;\n  height: 250px;\n  z-index: 1;\n  padding: 20px;\n  color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.content::before {\n  opacity: 0;\n  transition: opacity 300ms;\n  content: ' ';\n  display: block;\n  background: white;\n  width: 50px;\n  height: 50px;\n  position: absolute;\n  filter: blur(50px);\n}\n\n.card:hover .content::before {\n  opacity: 1;\n}\n\n.card::before {\n  opacity: 0;\n  content: ' ';\n  position: absolute;\n  display: block;\n  width: 120px;\n  height: 360px;\n  background: linear-gradient(90deg, transparent, #ff2288, #387EF0, transparent);\n  transition: opacity 300ms;\n  animation: rotation_9018 3000ms infinite linear;\n  animation-play-state: paused;\n}\n\n.card:hover::before {\n  opacity: 1;\n  animation-play-state: running;\n}\n\n.card::after {\n  position: absolute;\n  content: ' ';\n  display: block;\n  width: 190px;\n  height: 254px;\n  background: #17171733;\n  backdrop-filter: blur(50px);\n}\n\n@keyframes rotation_9018 {\n  0% {\n    transform: rotate(0deg);\n  }\n\n  100% {\n    transform: rotate(360deg);\n  }\n}\n</style>"
+  }
+}
+```
+
+## Selected Component Reference
+- Category: Cards
+- Component: ElSombrero2_fresh-wombat-97.html
+- Path: C:\Users\User\Documents\GitHub\Axon\x-components\Cards\ElSombrero2_fresh-wombat-97.html
+
+Use the selected component HTML below as the primary design reference for the new UI. Keep the structure and styling assumptions in mind while rewriting the requested files.
+```html
+<div id="card" class="card">
+  <div class="content">
+    <span>HOVER ME</span>
+  </div>
+</div>
+<style>
+/* Tags: card */
+.card {
+  width: 190px;
+  height: 254px;
+  background: #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 3px 1px #00000088;
+  cursor: pointer;
+}
+
+.card .content {
+  border-radius: 5px;
+  background: #171717;
+  width: 186px;
+  height: 250px;
+  z-index: 1;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content::before {
+  opacity: 0;
+  transition: opacity 300ms;
+  content: ' ';
+  display: block;
+  background: white;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  filter: blur(50px);
+}
+
+.card:hover .content::before {
+  opacity: 1;
+}
+
+.card::before {
+  opacity: 0;
+  content: ' ';
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 360px;
+  background: linear-gradient(90deg, transparent, #ff2288, #387EF0, transparent);
+  transition: opacity 300ms;
+  animation: rotation_9018 3000ms infinite linear;
+  animation-play-state: paused;
+}
+
+.card:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+.card::after {
+  position: absolute;
+  content: ' ';
+  display: block;
+  width: 190px;
+  height: 254px;
+  background: #17171733;
+  backdrop-filter: blur(50px);
+}
+
+@keyframes rotation_9018 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
+```
+
+## Your Task
+Completely redesign the UI by rewriting these three files from scratch:
+- `src/App.tsx`
+- `src/App.css`
+- `src/index.css`
+
+## Rules for App.tsx
+1. Keep ALL existing imports:
+   - `import { useState, useEffect, useRef } from 'react'`
+   - `import reactLogo from './assets/react.svg'`
+   - `import viteLogo from './assets/vite.svg'`
+   - `import heroImg from './assets/hero.png'`
+   - `import './App.css'`
+2. Keep the `CounterNum` component (useRef + useEffect animation)
+3. Keep the counter button with `onClick` / `setCount` handler
+4. Keep the Documentation section (Vite/React links)
+5. Keep the Social section (GitHub/Discord/X/Bluesky links + SVG icons)
+6. Do NOT use CSS custom properties (`--var-name`) in inline `style` attributes - TypeScript will error
+
+## Rules for CSS
+- Apply the palette, typography, layout structure, animation level, and component text from the JSON above
+- Use Google Fonts via `@import` in `index.css`
+- Match the theme mood: electric, retro, neon, 80s
+
+## Mandatory Requirements (apply to every build)
+
+### 1. Responsive - Mobile First
+- Design for mobile (320px) first, scale up with `min-width` breakpoints
+- Touch targets minimum 44x44px
+- No horizontal scroll on any screen size
+- Fluid typography: use `clamp()` or responsive units (`rem`, `%`, `vw`)
+- Images and layout must reflow gracefully at 320px, 768px, 1280px
+
+### 2. Footer Copyright
+- The page MUST have a `<footer>` at the bottom
+- Footer text: `© 2026 Microtronic Co., Ltd. All rights reserved. Credit By Axon.`
+- Legal: [Privacy Policy](https://microtronic-thailand.github.io/privacy-policy/?lang=en)
+- Style the footer to match the theme palette (muted text on surface background)
+
+### 3. SEO Standards
+- `index.html` must have a descriptive `<title>`: `DRIVE - Synthwave | Microtronic`
+- Add `<meta name="description">` with the subtitle: `Outrun the future.`
+- Add `<meta name="keywords">` relevant to the theme
+- Add Open Graph tags: `og:title`, `og:description`, `og:type` (website)
+- All images must have meaningful `alt` attributes
+- Use semantic HTML: `<header>`, `<main>`, `<section>`, `<footer>`, `<nav>` where appropriate
+- Heading hierarchy: one `<h1>` (hero), `<h2>` for sections - no skipping levels
+
+## After saving all files
+1. Update `version` in `package.json` to `1.36.0`
+2. Update `<title>` and meta tags in `index.html` as specified above
+3. Run: `pnpm build`
+4. If build succeeds → write `done` to `scripts/build-done.flag`
+5. If build fails with TypeScript errors → fix them and rebuild
