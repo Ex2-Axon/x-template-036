@@ -2,6 +2,9 @@
 name: Deploy to GitHub Pages
 
 on:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
   push:
     branches: [main]
 
@@ -12,15 +15,24 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true' ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: pnpm/action-setup@v3
         with:
-          version: 9
-      - uses: actions/setup-node@v4
+          version:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true' 9
+      - uses: actions/setup-node@v5
         with:
-          node-version: '22'
+          node-version:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true' '22'
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm build
